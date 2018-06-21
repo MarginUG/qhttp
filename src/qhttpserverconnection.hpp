@@ -77,7 +77,9 @@ protected:
     Q_DECLARE_PRIVATE(QHttpConnection)
     QScopedPointer<QHttpConnectionPrivate>    d_ptr;
 
-    friend class    QHttpServer;
+    friend class QHttpServer;
+    // ce: omg!
+    friend class SpecialQHttpServer;
 };
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -19,12 +19,13 @@ namespace details {
 
 /// base HttpParser based on joyent http_parser
 template<class TImpl>
-class HttpParser
+class HttpParser 
 {
 public:
     explicit HttpParser(http_parser_type type) {
         // create http_parser object
         iparser.data  = static_cast<TImpl*>(this);
+        
         http_parser_init(&iparser, type);
 
         memset(&iparserSettings, 0, sizeof(http_parser_settings));
