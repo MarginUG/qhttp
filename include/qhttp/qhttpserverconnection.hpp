@@ -76,7 +76,11 @@ protected:
     friend class QHttpServer;
     Q_DISABLE_COPY(QHttpConnection)
     Q_DECLARE_PRIVATE(QHttpConnection)
-    QScopedPointer<QHttpConnectionPrivate> d_ptr;
+    QScopedPointer<QHttpConnectionPrivate>    d_ptr;
+
+    friend class QHttpServer;
+    // ce: omg!
+    friend class SpecialQHttpServer;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
