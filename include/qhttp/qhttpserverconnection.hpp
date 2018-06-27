@@ -67,7 +67,7 @@ signals:
     void disconnected();
 
 protected:
-    explicit QHttpConnection(QHttpServer *parent);
+    explicit QHttpConnection(QHttpServer *parent, bool useParentAsQObjectParent=true);
     explicit QHttpConnection(QHttpConnectionPrivate&, QHttpServer*);
 
     void setSocketDescriptor(qintptr sokDescriptor, TBackend backendType);

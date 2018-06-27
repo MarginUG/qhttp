@@ -4,8 +4,8 @@
 namespace qhttp {
 namespace server {
 ///////////////////////////////////////////////////////////////////////////////
-QHttpConnection::QHttpConnection(QHttpServer *parent)
-    : QObject(parent), d_ptr(new QHttpConnectionPrivate(this, parent)) { }
+QHttpConnection::QHttpConnection(QHttpServer *parent, bool useParentAsQObjectParent)
+    : QObject(useParentAsQObjectParent ? parent : nullptr), d_ptr(new QHttpConnectionPrivate(this, parent)) { }
 
 QHttpConnection::QHttpConnection(QHttpConnectionPrivate& dd, QHttpServer* parent)
     : QObject(parent), d_ptr(&dd) { }
